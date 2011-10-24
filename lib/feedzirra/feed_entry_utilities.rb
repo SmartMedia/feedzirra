@@ -9,7 +9,7 @@ module Feedzirra
 
     def parse_datetime(string)
       begin
-        DateTime.parse(string).feed_utils_to_gm_time
+        DateTime.parse(string.gsub('/', '-')).feed_utils_to_gm_time
       rescue
         puts "DATE CAN'T BE PARSED: [#{string}]"
         nil
